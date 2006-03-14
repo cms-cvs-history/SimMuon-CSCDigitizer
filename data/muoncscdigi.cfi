@@ -1,4 +1,16 @@
 module muoncscdigi = CSCDigiProducer
 {
+  int32 nScaBins = 8
+  bool doNoise = true
+  bool doCrosstalk = true
+  double stripSignalStartTime = -250
+  double stripSignalStopTime = 500
+  double stripSamplingTime = 25
+  int32 scaPeakBin = 4
+  double wireSignalStartTime = -250
+  double wireSignalStopTime = 500
+  double wireSamplingTime = 2
+  double wireTimingError = 0
+
 }
 
