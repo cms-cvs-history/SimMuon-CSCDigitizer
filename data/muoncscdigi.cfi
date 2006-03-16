@@ -7,9 +7,9 @@ module muoncscdigi = CSCDigiProducer
   double stripSignalStopTime = 500
   double stripSamplingTime = 25
   int32 scaPeakBin = 4
-  double wireSignalStartTime = -250
-  double wireSignalStopTime = 500
-  double wireSamplingTime = 2
+  double wireSignalStartTime = -100
+  double wireSignalStopTime = 150
+  double wireSamplingTime = 5
   double wireTimingError = 0
 
 }
