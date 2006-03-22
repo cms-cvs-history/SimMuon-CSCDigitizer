@@ -7,10 +7,10 @@ module muoncscdigi = CSCDigiProducer
   double stripSignalStopTime = 500
   double stripSamplingTime = 25
   int32 scaPeakBin = 4
+  string scaNoiseMode = "file"
   double wireSignalStartTime = -100
   double wireSignalStopTime = 150
   double wireSamplingTime = 5
   double wireTimingError = 0
-
 }
 
