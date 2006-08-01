@@ -1,4 +1,4 @@
-module muoncscdigi = CSCDigiProducer
+module muonCSCDigis = CSCDigiProducer
 {
   int32 nScaBins = 8
   bool doNoise = true
