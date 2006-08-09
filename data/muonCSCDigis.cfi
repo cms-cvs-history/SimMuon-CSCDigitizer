@@ -1,0 +1,19 @@
+module muonCSCDigis = CSCDigiProducer
+{
+  int32 nScaBins = 8
+  bool doNoise = true
+  bool doCrosstalk = true
+  double stripSignalStartTime = -250
+  double stripSignalStopTime = 500
+  double stripSamplingTime = 25
+  int32 scaPeakBin = 4
+  string scaNoiseMode = "simple"
+  double analogNoise = 2.7
+  double pedestal = 600
+  double pedestalWidth = 0
+  double wireSignalStartTime = -100
+  double wireSignalStopTime = 150
+  double wireSamplingTime = 5
+  double wireTimingError = 0
+}
+
