@@ -9,7 +9,7 @@ module muonCSCDigis = CSCDigiProducer
     double analogNoise = 2.7
     double pedestal = 600
     double pedestalWidth = 0
-    double shapingTime = 100.
+    int32 shapingTime = 100
     int32 tailShaping = 2
     double ampGainVariance = 0.03
     double peakTimeVariance = 3.
@@ -21,7 +21,7 @@ module muonCSCDigis = CSCDigiProducer
 
   PSet wires = {
     bool doNoise = true
-    double shapingTime = 30.
+    int32 shapingTime = 30
     int32 tailShaping = 2
     double ampGainVariance = 0.
     double peakTimeVariance = 0.
