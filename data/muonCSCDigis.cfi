@@ -30,6 +30,7 @@ module muonCSCDigis = CSCDigiProducer
     double signalStopTime = 150.
     double samplingTime = 5
     double wireTimingError = 0
+    int32 timeBitForBxZero = 6
   }
 }
 
