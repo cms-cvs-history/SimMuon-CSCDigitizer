@@ -17,6 +17,7 @@ module muonCSCDigis = CSCDigiProducer
     double signalStartTime = -250.
     double signalStopTime =500.
     double samplingTime = 25
+    int32 timeBitForBxZero = 9
   }
 
   PSet wires = {
