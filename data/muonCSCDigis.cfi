@@ -4,7 +4,8 @@ module muonCSCDigis = CSCDigiProducer
     int32 nScaBins = 8
     bool doNoise = true
     bool doCrosstalk = true
-    int32 scaPeakBin = 4
+    bool doSuppression = false
+    int32 scaPeakBin = 5
     string scaNoiseMode = "simple"
     double analogNoise = 2.7
     double pedestal = 600
@@ -17,7 +18,8 @@ module muonCSCDigis = CSCDigiProducer
     double signalStartTime = -250.
     double signalStopTime =500.
     double samplingTime = 25
-    int32 timeBitForBxZero = 9
+    int32 timeBitForBxZero = 6
+    int32 comparatorTimeBinOffset = 4
   }
 
   PSet wires = {
@@ -33,5 +35,17 @@ module muonCSCDigis = CSCDigiProducer
     double wireTimingError = 0
     int32 timeBitForBxZero = 6
   }
+
+  bool doNeutrons = false
+  PSet neutrons = {
+    double luminosity = 0.1
+    double startTime = -100
+    double endTime = 50
+    vdouble eventOccupancy = {1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.}
+    string reader = "ROOT"
+    FileInPath input = "SimMuon/CSCDigitizer/test/CSCNeutronHits.root"
+    int32 nChamberTypes = 10
+  }
+
 }
 
