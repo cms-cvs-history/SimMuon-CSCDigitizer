@@ -1,0 +1,10 @@
+module cscNeutronWriter = CSCNeutronWriter 
+{
+  InputTag input = g4SimHits:MuonCSCHits
+  double neutronTimeCut = 250.
+  double timeWindow = 20.
+  string writer = "ROOT"
+  string output = "CSCNeutronHits.root"
+  int32 nChamberTypes = 10
+}
+
