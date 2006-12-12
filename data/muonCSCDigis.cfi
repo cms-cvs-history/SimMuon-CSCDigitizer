@@ -43,7 +43,7 @@ module muonCSCDigis = CSCDigiProducer
     double endTime = 50
     vdouble eventOccupancy = {1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.}
     string reader = "ROOT"
-    FileInPath input = "SimMuon/CSCDigitizer/test/CSCNeutronHits.root"
+    //FileInPath input = "SimMuon/CSCDigitizer/test/CSCNeutronHits.root"
     int32 nChamberTypes = 10
   }
 
