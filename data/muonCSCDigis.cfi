@@ -1,3 +1,5 @@
+include "SimMuon/CSCDigitizer/data/muonCSCConditions.cfi"
+
 module muonCSCDigis = CSCDigiProducer
 {
   PSet strips = {
@@ -50,5 +52,7 @@ module muonCSCDigis = CSCDigiProducer
     FileInPath input = "SimMuon/CSCDigitizer/data/CSCNeutronHits.root"
   }
 
+  string stripConditions = "Configurable"
+  using muonCSCConditions
 }
 
