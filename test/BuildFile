@@ -1,0 +1,5 @@
+<environment>
+  <use name=SimMuon/CSCDigitizer>
+  <bin file=CSCCrosstalkTest.cpp></bin>
+</environment>
+
