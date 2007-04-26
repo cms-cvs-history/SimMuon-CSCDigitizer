@@ -1,0 +1,39 @@
+   es_source = PoolDBESSource {
+     VPSet toGet = {
+                    { string record = "CSCGainsRcd"
+                      string tag = "CSCGains_from_online" },
+                    { string record = "CSCPedestalsRcd"
+                      string tag = "CSCPedestals_from_online" },
+                    { string record = "CSCNoiseMatrixRcd"
+                      string tag = "CSCNoiseMatrix_from_online" },
+                    { string record = "CSCcrosstalkRcd"
+                      string tag = "CSCcrosstalk_from_online"}
+                   }
+     bool loadAll = true
+     #### Select DB to use
+     #string connect = "oracle://orcon/CMS_COND_CSC"
+     #untracked string catalog = "relationalcatalog_oracle://orcon/CMS_COND_GENERAL"
+     #### Alternative DB
+string connect = "oracle://devdb10/CMS_COND_CSC"
+untracked string catalog = "relationalcatalog_oracle://devdb10/CMS_COND_GENERAL"
+
+     #    string connect = "oracle://orcon/CMS_COND_CSC"
+     #    untracked string catalog = "relationalcatalog_oracle://orcon/CMS_COND_GENERAL"
+     #string connect = "oracle://devdb10/CMS_COND_CSC"
+     #untracked string catalog = "relationalcatalog_oracle://devdb10/CMS_COND_GENERAL"
+     #### Access via Frontier
+     ### untracked bool siteLocalConfig = true
+     ### string connect = "frontier://cms_conditions_data/CMS_COND_CSC"
+     string timetype = "runnumber"
+
+     PSet DBParameters = {
+                           ### Access from CERN:
+                           untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
+                           ### Acces from elsewhere, e.g. FNAL
+                           ### Need to make a local copy of the authentication.xml file
+                           # untracked string authenticationPath="./"
+                           untracked int32 messageLevel=0
+                           untracked bool loadBlobStreamer = true
+                         }
+   }
+
