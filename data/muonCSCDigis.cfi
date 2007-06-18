@@ -1,4 +1,3 @@
-include "SimMuon/CSCDigitizer/data/muonCSCConditions.cfi"
 
 module muonCSCDigis = CSCDigiProducer
 {
@@ -52,6 +51,6 @@ module muonCSCDigis = CSCDigiProducer
     FileInPath input = "SimMuon/CSCDigitizer/data/CSCNeutronHits.root"
   }
 
-  string stripConditions = "Configurable"
+  string stripConditions = "Database"
 }
 
