@@ -1,12 +1,12 @@
 
-include "SimMuon/CSCDigitizer/data/muonCSCConditions.cfi"
+//include "SimMuon/CSCDigitizer/data/muonCSCConditions.cfi"
 
 module muonCSCDigis = CSCDigiProducer
 {
   PSet strips = {
     int32 nScaBins = 8
     bool doNoise = true
-    bool doCrosstalk = false
+    bool doCrosstalk = true
     bool doSuppression = false
     int32 scaPeakBin = 5
     double pedestalSigma = 1.5
@@ -23,7 +23,7 @@ module muonCSCDigis = CSCDigiProducer
     double samplingTime = 25
     int32 timeBitForBxZero = 6
     int32 comparatorTimeBinOffset = 4
-    using muonCSCConditions
+    //using muonCSCConditions
   }
 
   PSet wires = { 
@@ -53,6 +53,6 @@ module muonCSCDigis = CSCDigiProducer
     FileInPath input = "SimMuon/CSCDigitizer/data/CSCNeutronHits.root"
   }
 
-  string stripConditions = "Configurable"
+  string stripConditions = "Database"
 }
 
