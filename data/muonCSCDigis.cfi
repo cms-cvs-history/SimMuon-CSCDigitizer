@@ -22,7 +22,7 @@ module muonCSCDigis = CSCDigiProducer
     double signalStopTime =500.
     double samplingTime = 25
     int32 timeBitForBxZero = 6
-    int32 comparatorTimeBinOffset = 4
+    double comparatorTimeBinOffset = 3.2
     //using muonCSCConditions
   }
 
