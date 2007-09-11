@@ -1,0 +1,7 @@
+module cscDigiDump  = CSCDigiDump
+{
+  InputTag wireDigiTag       = muonCSCDigis:MuonCSCWireDigi
+  InputTag stripDigiTag      = muonCSCDigis:MuonCSCStripDigi
+  InputTag comparatorDigiTag = muonCSCDigis:MuonCSCComparatorDigi
+}
+
