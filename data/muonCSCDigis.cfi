@@ -39,7 +39,7 @@ module muonCSCDigis = CSCDigiProducer
     int32 timeBitForBxZero = 6
   }
 
-  bool doNeutrons = true
+  bool doNeutrons = false
   PSet neutrons = {
     double luminosity = 0.1
     double startTime = -400
