@@ -10,7 +10,8 @@
 #include "Geometry/CSCGeometry/interface/CSCChamberSpecs.h"
 #include "Geometry/CSCGeometry/interface/CSCLayerGeometry.h"
 #include "CLHEP/Units/PhysicalConstants.h"
-#include<list>
+#include <list>
+#include <cassert>
 
 // This is CSCStripElectronicsSim.cc
 
@@ -161,38 +162,32 @@ CSCStripElectronicsSim::runComparator() {
          const CSCAnalogSignal * mainSignal = 0;
          // pick the higher of the two strips in the pair
          if(height1 > height2) {
+           mainSignal = &signal1;
            float leftStrip = 0.;
            if(iComparator > 0)  {
              leftStrip = comparatorReading(find(readoutElement(iComparator*2)), time); 
            }
            // if this strip is higher than either of its neighbors, make a comparator digi
-           if(leftStrip < height1) {
+           if(leftStrip < height1 && height1 > theComparatorThreshold) {
              output = (leftStrip < height2);
              strip = iComparator*2 + 1;
-             mainSignal = &signal1;
            }
          } else {
+           mainSignal = &signal2;
            float rightStrip = 0.;
            if(iComparator*2+3 <= nElements) {
              rightStrip = comparatorReading(find(readoutElement(iComparator*2+3)), time);
            }
-           if(rightStrip < height2) {
+           if(rightStrip < height2 && height2 > theComparatorThreshold) {
              output = (height1 < rightStrip);
              strip = iComparator*2 + 2;
-             mainSignal = &signal2;
            }
          }
          if(strip != 0) {
 
-           // decide how long this comparator and neighboring ones will be locked for
-           float lockingTime = time + theComparatorDeadTime;
-           // really should be zero, but strip signal doesn't go negative yet
-           float resetThreshold = 1;
-           while(lockingTime < theSignalStopTime
-              && mainSignal->getValue(lockingTime) > resetThreshold) {
-             lockingTime += theSamplingTime;
-           }
+//           int timeBin = (int)((comparatorTime-theTimingOffset)/theBunchSpacing + theComparatorTimeBinOffset);
            int timeBin = (int)((comparatorTime-theTimingOffset)/theBunchSpacing) + theComparatorTimeBinOffset;
+
       // Comparator digi as of Nov-2006 adapted to real data: time word has 16 bits with set bit
       // flagging appropriate bunch crossing, and bx 0 corresponding to 9th bit i.e.
 
@@ -213,8 +208,17 @@ CSCStripElectronicsSim::runComparator() {
 
            CSCComparatorDigi newDigi(strip, output, timeWord);
            result.push_back(newDigi);
-           time = lockingTime;
          }
+
+         // wait for the comparator to reset
+         time += theComparatorDeadTime;
+         // really should be zero, but strip signal doesn't go negative yet
+         float resetThreshold = 1;
+         while(time < theSignalStopTime
+            && mainSignal->getValue(time) > resetThreshold) {
+           time += theSamplingTime;
+         }
+
        } // if over threshold
     } // loop over time samples
   }  // loop over comparators  
