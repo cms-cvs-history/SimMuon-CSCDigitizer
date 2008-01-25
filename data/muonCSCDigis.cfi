@@ -17,12 +17,14 @@ module muonCSCDigis = CSCDigiProducer
     int32 tailShaping = 2
     double ampGainSigma = 0.03
     double peakTimeSigma = 3.
-    vdouble bunchTimingOffsets = {0., 45., 45., 50., 50., 50., 50., 50., 50., 50., 50.}
+    vdouble bunchTimingOffsets = {0., 20., 20., 45., 45., 45., 45., 45., 45., 45., 45.}
     double signalStartTime = -250.
     double signalStopTime =500.
     double samplingTime = 25
     int32 timeBitForBxZero = 6
-    double comparatorTimeBinOffset = 2.8
+    // parameters for tuning timing
+    double comparatorTimeBinOffset = 3.0
+    double comparatorTimeOffset = 15
     double capacativeCrosstalk = 76.2
     double gainsConstant = 0.27
     bool doCorrelatedNoise = true
