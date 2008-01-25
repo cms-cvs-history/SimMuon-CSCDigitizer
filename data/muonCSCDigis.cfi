@@ -17,12 +17,17 @@ module muonCSCDigis = CSCDigiProducer
     int32 tailShaping = 2
     double ampGainSigma = 0.03
     double peakTimeSigma = 3.
-    vdouble bunchTimingOffsets = {0., 45., 45., 50., 50., 50., 50., 50., 50., 50., 50.}
+    vdouble bunchTimingOffsets = {0., 20., 20., 45., 45., 45., 45., 45., 45., 45., 45.}
     double signalStartTime = -250.
     double signalStopTime =500.
     double samplingTime = 25
     int32 timeBitForBxZero = 6
-    int32 comparatorTimeBinOffset = 4
+    // parameters for tuning timing
+    double comparatorTimeBinOffset = 3.0
+    double comparatorTimeOffset = 15
+    double capacativeCrosstalk = 76.2
+    double gainsConstant = 0.27
+    bool doCorrelatedNoise = true
     //using muonCSCConditions
   }
 
@@ -31,7 +36,7 @@ module muonCSCDigis = CSCDigiProducer
     int32 shapingTime = 30
     int32 tailShaping = 2
     double peakTimeSigma = 0.
-    vdouble bunchTimingOffsets = {0., 40., 40., 55.0, 55.0, 55.0, 55.0, 55.0, 55.0, 55.0, 55.0}
+    vdouble bunchTimingOffsets = {0., 20., 20., 35.0, 35.0, 35.0, 35.0, 35.0, 35.0, 35.0, 35.0}
     double signalStartTime = -100.
     double signalStopTime = 150.
     double samplingTime = 5
@@ -39,7 +44,7 @@ module muonCSCDigis = CSCDigiProducer
     int32 timeBitForBxZero = 6
   }
 
-  bool doNeutrons = true
+  bool doNeutrons = false
   PSet neutrons = {
     double luminosity = 0.1
     double startTime = -400
