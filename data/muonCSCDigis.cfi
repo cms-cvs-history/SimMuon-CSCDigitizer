@@ -25,8 +25,8 @@ module muonCSCDigis = CSCDigiProducer
     // parameters for tuning timing
     double comparatorTimeBinOffset = 3.0
     double comparatorTimeOffset = 15
-    double capacativeCrosstalk = 76.2
-    double resistiveCrosstalkScaling = 1.
+    double capacativeCrosstalk = 35.
+    double resistiveCrosstalkScaling = 1.2
     double gainsConstant = 0.27
     bool doCorrelatedNoise = true
     //using muonCSCConditions
@@ -37,7 +37,10 @@ module muonCSCDigis = CSCDigiProducer
     int32 shapingTime = 30
     int32 tailShaping = 2
     double peakTimeSigma = 0.
-    vdouble bunchTimingOffsets = {0., 20., 20., 35.0, 35.0, 35.0, 35.0, 35.0, 35.0, 35.0, 35.0}
+    # tweaked to center ALCTs
+    vdouble bunchTimingOffsets = {0., 13., 13., 28.0, 28.0, 28.0, 28.0, 28.0, 28.0, 28.0, 28.0}
+    # tweaked to center wire digis
+    # vdouble bunchTimingOffsets = {0., 20., 20., 35.0, 35.0, 35.0, 35.0, 35.0, 35.0, 35.0, 35.0}
     double signalStartTime = -100.
     double signalStopTime = 150.
     double samplingTime = 5
