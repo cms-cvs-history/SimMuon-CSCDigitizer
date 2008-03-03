@@ -30,6 +30,7 @@ module muonCSCDigis = CSCDigiProducer
     double gainsConstant = 0.27
     bool doCorrelatedNoise = true
     //using muonCSCConditions
+    bool readBadChannels = false
   }
 
   PSet wires = { 
@@ -46,6 +47,7 @@ module muonCSCDigis = CSCDigiProducer
     double samplingTime = 5
     double wireTimingError = 0
     int32 timeBitForBxZero = 6
+    bool readBadChannels = false
   }
 
   bool doNeutrons = false
