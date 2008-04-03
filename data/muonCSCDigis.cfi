@@ -26,7 +26,7 @@ module muonCSCDigis = CSCDigiProducer
     double comparatorTimeBinOffset = 3.0
     double comparatorTimeOffset = 15
     double capacativeCrosstalk = 35.
-    double resistiveCrosstalkScaling = 1.2
+    double resistiveCrosstalkScaling = 1.8
     double gainsConstant = 0.27
     bool doCorrelatedNoise = true
     //using muonCSCConditions
