@@ -1,5 +1,4 @@
 
-//include "SimMuon/CSCDigitizer/data/muonCSCConditions.cfi"
 
 module simMuonCSCDigis = CSCDigiProducer
 {
@@ -29,7 +28,6 @@ module simMuonCSCDigis = CSCDigiProducer
     double resistiveCrosstalkScaling = 1.8
     double gainsConstant = 0.27
     bool doCorrelatedNoise = true
-    //using muonCSCConditions
     bool readBadChannels = false
   }
 
