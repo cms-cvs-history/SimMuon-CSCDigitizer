@@ -49,6 +49,7 @@ module simMuonCSCDigis = CSCDigiProducer
   }
 
   bool doNeutrons = false
+  /*
   PSet neutrons = {
     double luminosity = 0.1
     double startTime = -400
@@ -61,6 +62,7 @@ module simMuonCSCDigis = CSCDigiProducer
     string reader = "ROOT"
     FileInPath input = "SimMuon/CSCDigitizer/data/CSCNeutronHits.root"
   }
+  */
 
   string stripConditions = "Database"
 
