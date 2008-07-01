@@ -67,5 +67,7 @@ module simMuonCSCDigis = CSCDigiProducer
   string stripConditions = "Database"
 
   string InputCollection = 'g4SimHitsMuonCSCHits'      
+
+  string GeometryType = 'idealForDigi'
 }
 
